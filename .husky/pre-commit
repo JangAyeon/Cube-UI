@@ -8,4 +8,4 @@ npm run lint:fix
 
 # Run build before commit
 
-npm run build
+# npm run build

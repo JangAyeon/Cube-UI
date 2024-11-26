@@ -3,24 +3,28 @@ import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
-import packageJson from "./package.json" assert { type: "json" };
+import packageJson from "./package.json" with { type: "json" };
+// node version이 높은 경우 강의에서 사용한 asser에서 에러 발생함 (회사 컴) - with로 변경해 해결함
+// 나의 노트북은 node version 18로 맞춰놔서 assert 사용해도 에러 발생하지 않았음
 
 export default [
   {
-    input: "src/index.ts",
+    input: "src/index.ts" /* 번들링 파일 진입점 */,
     output: [
+      /* 번들 결과 저장할 파일과 포맷 지정 */
       {
         file: packageJson.main,
-        format: "cjs",
-        sourcemap: true,
+        format: "cjs" /* CommonJS 형식으로 번들링을 */,
+        sourcemap: true /* 소스맵 파일을 생성 */,
       },
       {
         file: packageJson.module,
-        format: "esm",
+        format: "esm" /* ES 모듈 형식으로 번들링 */,
         sourcemap: true,
       },
     ],
     plugins: [
+      /* 플러그인들을 지정 */
       resolve({
         extensions: [".js", ".jsx", ".ts", ".tsx"],
         skip: ["react", "react-dom"],
@@ -35,8 +39,11 @@ export default [
     external: ["react", "react-dom", "react/jsx-runtime"],
   },
   {
-    input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    input:
+      "dist/esm/types/index.d.ts" /* 타입 정의 파일의 번들링을 시작할 위치 */,
+    output: [
+      { file: "dist/index.d.ts", format: "esm" },
+    ] /* 번들링된 타입 정의 파일을 저장할 위치와 형식을 지정 */,
     plugins: [dts()],
     external: [/\.css$/],
   },

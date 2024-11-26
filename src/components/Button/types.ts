@@ -1,3 +1,3 @@
 export interface ButtonProps {
-  content: string;
+  content: string
 }

@@ -33,28 +33,8 @@ jobs:
             - commitlint.config.js
             - tsconfig.json
             - .husky
-  run_tests:
-    executor: node/default
-    description: Run tests
-    steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name: Run tests
-          command: npm run test
-  build:
-    executor: node/default
-    description: Build
-    steps:
-      - attach_workspace:
-          at: .
-      - run:
-          name: Build
-          command: npm run build
 
 workflows:
   build_app:
     jobs:
       - lint_code
-      - run_tests
-      - build

@@ -51,25 +51,7 @@ jobs:
       - run:
           name: Build
           command: npm run build
-  
-    executor: node/default
-    description: Publish to npm
-    steps:
-      - checkout
-      - node/install-packages
-      - run:
-          name: Check if npm version is the same and publish to npm
-          command: |
-            CURRENT_VERSION=$(npm show imran-codes-react-component-library version)
-            LOCAL_VERSION=$(node -pe "require('./package.json').version")
 
-            if [ "$CURRENT_VERSION" != "$LOCAL_VERSION" ]; then
-              echo "Versions are different. Publishing to npm."
-              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-              npm publish
-            else
-              echo "Versions are the same. Skipping npm publish."
-            fi
 workflows:
   build_app:
     jobs:

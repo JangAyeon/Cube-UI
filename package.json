@@ -1,5 +1,5 @@
 {
-  "name": "cube-ui",
+  "name": "cube-budget-ui",
   "version": "0.0.1",
   "description": "ui library for cube-budget project",
   "main": "dist/cjs/index.js",

@@ -36,7 +36,15 @@
       ]
     ]
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JangAyeon/Cube-UI.git"
+  },
+  "homepage": "https://github.com/JangAyeon/Cube-UI#readme",
+  "bugs": {
+    "url": "https://github.com/JangAyeon/Cube-UI/issues"
+  },
+  "author": "puuupuuu",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",

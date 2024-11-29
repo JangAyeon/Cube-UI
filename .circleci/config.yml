@@ -102,3 +102,6 @@ workflows:
       - publish_to_npm:
           requires:
             - build
+          filters:
+            branches:
+              only: main

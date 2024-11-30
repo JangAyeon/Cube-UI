@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from "@storybook/react";
 
-import { Button } from "./Button";
+import { Button } from ".";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button", // Storybook 내에서 컴포넌트가 표시될 경로

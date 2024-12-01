@@ -4,7 +4,7 @@ import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
-import packageJson from "./package.json" with { type: "json" };
+import packageJson from "./package.json" assert { type: "json" };
 // node version이 높은 경우 강의에서 사용한 asser에서 에러 발생함 (회사 컴) - with로 변경해 해결함
 // 나의 노트북은 node version 18로 맞춰놔서 assert 사용해도 에러 발생하지 않았음
 

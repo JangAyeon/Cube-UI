@@ -1,51 +1,82 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import Button from "./index";
 import "@testing-library/jest-dom";
+import userEvent from "@testing-library/user-event";
+import { Button } from ".";
 
 describe("Button Component", () => {
-  // 렌더링 테스트: 버튼이 올바르게 렌더링되고, 전달된 content가 표시되는지 확인
-  it("renders the button with provided content", () => {
-    render(<Button content="Click Me" />);
-
-    // Button with the correct text should be in the document
-    expect(
-      screen.getByRole("button", { name: /click me/i })
-    ).toBeInTheDocument();
+  test("renders the button with default props", () => {
+    render(<Button>Default Button</Button>);
+    const button = screen.getByRole("button", { name: /default button/i });
+    expect(button).toBeInTheDocument();
+    expect(button).toHaveClass("bg-blue-500 text-white"); // Default colorTheme & variants
   });
 
-  // 스타일 테스트: 버튼에 올바른 클래스가 적용되었는지 확인
-  it("applies the correct styles", () => {
-    render(<Button content="Styled Button" />);
-
-    const button = screen.getByRole("button", { name: /styled button/i });
-    // Check if the button has the expected class names
-    expect(button).toHaveClass(
-      "rounded",
-      "bg-blue-500",
-      "px-4",
-      "py-2",
-      "font-bold",
-      "text-white"
-    );
-  });
-
-  // 클릭 이벤트 테스트: 버튼 클릭 시 핸들러가 호출되는지 확인
-  it("triggers a click event", async () => {
-    const handleClick = jest.fn(); // Mock function
+  test("applies the correct class based on colorTheme and variants", () => {
     render(
-      <button
-        className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
-        onClick={handleClick}
-      >
-        Click Me
-      </button>
+      <Button colorTheme="red" variants="outline">
+        Red Outline Button
+      </Button>
     );
+    const button = screen.getByRole("button", { name: /red outline button/i });
+    expect(button).toHaveClass("text-red-500 border-red-500 hover:bg-red-100");
+  });
 
-    const button = screen.getByRole("button", { name: /click me/i });
+  test("applies the correct size and shape classes", () => {
+    render(
+      <Button size="lg" shape="round">
+        Large Round Button
+      </Button>
+    );
+    const button = screen.getByRole("button", { name: /large round button/i });
+    expect(button).toHaveClass("h-12 px-6 text-lg rounded-full");
+  });
+
+  test("disables the button when isDisabled is true", () => {
+    render(<Button isDisabled>Disabled Button</Button>);
+    const button = screen.getByRole("button", { name: /disabled button/i });
+    expect(button).toBeDisabled();
+    expect(button).toHaveClass("cursor-not-allowed opacity-50");
+  });
+
+  test("applies loading styles when isLoading is true", () => {
+    render(<Button isLoading>Loading Button</Button>);
+    const button = screen.getByRole("button", { name: /loading button/i });
+    expect(button).toBeDisabled();
+    expect(button).toHaveClass("cursor-not-allowed opacity-50");
+  });
+
+  test("handles click events", async () => {
+    const handleClick = jest.fn();
+    render(<Button onClick={handleClick}>Clickable Button</Button>);
+    const button = screen.getByRole("button", { name: /clickable button/i });
+
     await userEvent.click(button);
-
-    // Ensure the click handler was called once
     expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  test("renders with custom className", () => {
+    render(<Button className="custom-class">Custom Class Button</Button>);
+    const button = screen.getByRole("button", { name: /custom class button/i });
+    expect(button).toHaveClass("custom-class");
+  });
+
+  test("renders a link style button", () => {
+    render(
+      <Button colorTheme="gray" variants="link">
+        Link Button
+      </Button>
+    );
+    const button = screen.getByRole("button", { name: /link button/i });
+    expect(button).toHaveClass("text-gray-500 underline hover:text-gray-600");
+  });
+
+  test("renders a ghost style button", () => {
+    render(
+      <Button colorTheme="black" variants="ghost">
+        Ghost Button
+      </Button>
+    );
+    const button = screen.getByRole("button", { name: /ghost button/i });
+    expect(button).toHaveClass("text-black bg-transparent hover:bg-gray-100");
   });
 });

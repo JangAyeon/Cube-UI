@@ -1,5 +1,6 @@
 import { type Meta, type StoryObj } from "@storybook/react";
 
+import { expect, fireEvent, within } from "@storybook/test";
 import { Button } from ".";
 
 const meta: Meta<typeof Button> = {
@@ -63,16 +64,23 @@ export const Default: Story = {
     children: <div> text</div>,
   },
 };
-/*
-export const Primary: Story = {
-  args: {
-    content: "Primary Button"
-  }
-};
 
-export const WithLongText: Story = {
+export const Disabled: Story = {
   args: {
-    content: "This is a button with a longer text"
-  }
+    colorTheme: "red", // 기본 props 설정
+    children: <div> text</div>,
+    shape: "round",
+    isDisabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // 1. 버튼 랜더링 확인
+    const button = await canvas.findByRole("button");
+    await expect(button).toBeInTheDocument();
+
+    // 2. 버튼 비활성화 확인
+    await fireEvent.click(button);
+    await expect(button).toBeDisabled();
+  },
 };
-*/

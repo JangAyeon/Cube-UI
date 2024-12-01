@@ -7,7 +7,6 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
-    "@storybook/addon-interactions",
     {
       name: "@storybook/addon-postcss",
       options: {
@@ -22,6 +21,8 @@ const config: StorybookConfig = {
         },
       },
     },
+    "@storybook/experimental-addon-test",
+    "@chromatic-com/storybook"
   ],
 
   framework: {

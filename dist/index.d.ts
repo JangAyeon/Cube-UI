@@ -5,10 +5,10 @@ type Size = "sm" | "md" | "lg";
 type Variants = "solid" | "outline" | "ghost" | "link";
 type Shape = "square" | "round";
 interface ButtonStyleProps {
-    variants?: Variants;
-    size?: Size;
-    shape?: Shape;
     colorTheme?: ColorTheme;
+    variants?: Variants;
+    shape?: Shape;
+    size?: Size;
     className?: string;
     children: React.ReactNode;
     isDisabled?: boolean;

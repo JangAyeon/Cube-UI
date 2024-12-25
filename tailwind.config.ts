@@ -23,6 +23,80 @@ const config = {
         gray_400: "#374151",
         gray: "#6b7280", // gray_200
       },
+      fontSize: {
+        Heading_100: [
+          "1.8rem",
+          {
+            fontWeight: "600", // semi-bold
+            lineHeight: "2.6rem",
+            letterSpacing: "-0.025rem",
+          },
+        ],
+        Title_200: [
+          "1.8rem",
+          {
+            fontWeight: "700", // bold
+            lineHeight: "2.6rem",
+            letterSpacing: "0rem",
+          },
+        ],
+        Title_100: [
+          "1.6rem",
+          {
+            fontWeight: "700", // bold
+            lineHeight: "2.4rem",
+            letterSpacing: "0rem",
+          },
+        ],
+        Detail_300: [
+          "1.6rem",
+          {
+            fontWeight: "400", // regular
+            lineHeight: "2.2rem",
+            letterSpacing: "0rem",
+          },
+        ],
+        Detail_200: [
+          "1.4rem",
+          {
+            fontWeight: "400", // regular
+            lineHeight: "2.0rem",
+            letterSpacing: "-0.025rem",
+          },
+        ],
+        Detail_100: [
+          "1.3rem",
+          {
+            fontWeight: "400", // regular
+            lineHeight: "2.2rem",
+            letterSpacing: "0rem",
+          },
+        ],
+        Body_300: [
+          "1.6rem",
+          {
+            fontWeight: "600", // semi
+            lineHeight: "2.2rem",
+            letterSpacing: "0rem",
+          },
+        ],
+        Body_200: [
+          "1.6rem",
+          {
+            fontWeight: "500", // med
+            lineHeight: "2.2rem",
+            letterSpacing: "0rem",
+          },
+        ],
+        Body_100: [
+          "1.3rem",
+          {
+            fontWeight: "500", // med
+            lineHeight: "1.8rem",
+            letterSpacing: "0rem",
+          },
+        ],
+      },
     },
   },
   plugins: [],

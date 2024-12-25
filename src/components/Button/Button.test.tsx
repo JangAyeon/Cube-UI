@@ -8,7 +8,7 @@ describe("Button Component", () => {
     render(<Button>Default Button</Button>);
     const button = screen.getByRole("button", { name: /default button/i });
     expect(button).toBeInTheDocument();
-    expect(button).toHaveClass("bg-blue-500 text-white"); // Default colorTheme & variants
+    expect(button).toHaveClass("bg-primary text-white"); // Default colorTheme & variants
   });
 
   test("applies the correct class based on colorTheme and variants", () => {
@@ -18,7 +18,7 @@ describe("Button Component", () => {
       </Button>
     );
     const button = screen.getByRole("button", { name: /red outline button/i });
-    expect(button).toHaveClass("text-red-500 border-red-500 hover:bg-red-100");
+    expect(button).toHaveClass("text-red border-red hover:bg-red_100");
   });
 
   test("applies the correct size and shape classes", () => {
@@ -67,7 +67,7 @@ describe("Button Component", () => {
       </Button>
     );
     const button = screen.getByRole("button", { name: /link button/i });
-    expect(button).toHaveClass("text-gray-500 underline hover:text-gray-600");
+    expect(button).toHaveClass("text-gray underline hover:text-gray_300");
   });
 
   test("renders a ghost style button", () => {
@@ -77,6 +77,6 @@ describe("Button Component", () => {
       </Button>
     );
     const button = screen.getByRole("button", { name: /ghost button/i });
-    expect(button).toHaveClass("text-black bg-transparent hover:bg-gray-100");
+    expect(button).toHaveClass("text-black bg-transparent hover:bg-gray_100");
   });
 });

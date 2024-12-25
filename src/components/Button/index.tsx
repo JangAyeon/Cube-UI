@@ -4,28 +4,28 @@ import { type ButtonProps } from "./Button.types";
 
 const COLOR_THEMES = {
   primary: {
-    solid: "bg-blue-500 border-blue-500 text-white hover:bg-blue-600",
-    outline: "text-blue-500 border border-blue-500 hover:bg-blue-100",
-    ghost: "text-blue-500 bg-transparent hover:bg-blue-100",
-    link: "text-blue-500 underline hover:text-blue-600",
+    solid: "bg-primary border-primary text-white hover:bg-blue_300",
+    outline: "text-primary border border-primary hover:bg-blue_100",
+    ghost: "text-primary bg-transparent hover:bg-blue_100",
+    link: "text-primary underline hover:text-blue_300",
   },
   black: {
-    solid: "bg-black border-black text-white hover:bg-gray-800",
-    outline: "text-black border border-black hover:bg-gray-200",
-    ghost: "text-black bg-transparent hover:bg-gray-100",
-    link: "text-black underline hover:text-gray-800",
+    solid: "bg-black border-black text-white hover:bg-gray_400",
+    outline: "text-black border border-black hover:bg-gray",
+    ghost: "text-black bg-transparent hover:bg-gray_100",
+    link: "text-black underline hover:text-gray_400",
   },
   gray: {
-    solid: "bg-gray-500 border-gray-500 text-white hover:bg-gray-600",
-    outline: "text-gray-500 border border-gray-500 hover:bg-gray-100",
-    ghost: "text-gray-500 bg-transparent hover:bg-gray-50",
-    link: "text-gray-500 underline hover:text-gray-600",
+    solid: "bg-gray border-gray text-white hover:bg-gray_300",
+    outline: "text-gray border border-gray hover:bg-gray_100",
+    ghost: "text-gray bg-transparent hover:bg-gray_100",
+    link: "text-gray underline hover:text-gray_300",
   },
   red: {
-    solid: "bg-red-500 border-red-500 text-white hover:bg-red-600",
-    outline: "text-red-500 border border-red-500 hover:bg-red-100",
-    ghost: "text-red-500 bg-transparent hover:bg-red-50",
-    link: "text-red-500 underline hover:text-red-600",
+    solid: "bg-red border-red text-white hover:bg-red_300",
+    outline: "text-red border border-red hover:bg-red_100",
+    ghost: "text-red bg-transparent hover:bg-red_100",
+    link: "text-red underline hover:text-red_300",
   },
 };
 

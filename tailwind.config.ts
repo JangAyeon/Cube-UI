@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const config = {
+  presets: [require("./tailwind.config.ts")],
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/core/**/*.{js,ts,jsx,tsx}",

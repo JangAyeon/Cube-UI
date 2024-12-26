@@ -9,6 +9,7 @@ import packageJson from "./package.json" assert { type: "json" };
 // 나의 노트북은 node version 18로 맞춰놔서 assert 사용해도 에러 발생하지 않았음
 
 export default [
+  // ♥️ 5-1. TypeScript 및 CSS 번들링
   {
     input: "src/index.ts" /* 번들링 파일 진입점 */,
     output: [
@@ -39,6 +40,7 @@ export default [
     ],
     external: ["react", "react-dom", "react/jsx-runtime"],
   },
+  // ♥️ 5-2. 커스텀 타입 정의 파일 번들링: TypeScript 타입 파일 처리
   {
     input:
       "dist/esm/types/index.d.ts" /* 타입 정의 파일의 번들링을 시작할 위치 */,
@@ -48,6 +50,7 @@ export default [
     plugins: [dts()],
     external: [/\.css$/],
   },
+  // ♥️ 5-3. 글로벌 CSS 파일 처리: 스타일 번들링
   {
     input: "src/globals.css",
     output: [{ file: "dist/index.css", format: "es" }],

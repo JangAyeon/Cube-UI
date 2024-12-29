@@ -18,7 +18,9 @@
     "@typescript-eslint/member-delimiter-style": "off",
     "@typescript-eslint/indent": "off",
     "multiline-ternary": "off",
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "warn",
+    "@typescript-eslint/strict-boolean-expressions": "warn",
+    "@typescript-eslint/no-confusing-void-expression": "warn"
   },
   "settings": {
     "react": {

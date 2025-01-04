@@ -1,1 +1,0 @@
-export declare const Button: import("react").ForwardRefExoticComponent<Omit<import("react").DetailedHTMLProps<import("react").ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, "ref"> & import("./Button.types").ButtonStyleProps & import("react").RefAttributes<HTMLButtonElement>>;

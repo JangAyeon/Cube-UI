@@ -18,7 +18,7 @@ export const ModalDefaultWithClose = (): JSX.Element => {
 
   return (
     <>
-      <Button colorTheme="red" variants="ghost" onClick={() => setIsOpen(true)}>
+      <Button colorTheme="red" variants="ghost" onClick={() => { setIsOpen(true); }}>
         모달 열기
       </Button>
       <Modal.Wrapper

@@ -4,6 +4,7 @@ const config = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/core/**/*.{js,ts,jsx,tsx}",
     "./src/utils/**/*.{js,ts,jsx,tsx}",
+    "./src/assets/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

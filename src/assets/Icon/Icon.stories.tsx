@@ -1,5 +1,13 @@
 import { type StoryObj, type Meta } from "@storybook/react";
-import { CloseIcon, PiggyBankIcon, SettingIcon, CalculatorIcon } from ".";
+import {
+  CloseIcon,
+  PiggyBankIcon,
+  SettingIcon,
+  CalculatorIcon,
+  RightArrowIcon,
+  LeftArrowIcon,
+  CalendarIcon,
+} from ".";
 const meta: Meta<typeof CloseIcon> = {
   title: "Assets/Icon",
   component: (args) => (
@@ -8,6 +16,9 @@ const meta: Meta<typeof CloseIcon> = {
       <CloseIcon {...args} />
       <SettingIcon {...args} />
       <CalculatorIcon {...args} />
+      <RightArrowIcon {...args} />
+      <LeftArrowIcon {...args} />
+      <CalendarIcon {...args} />
     </div>
   ),
   tags: ["autodocs"], // 자동으로 문서를 생성하는 태그

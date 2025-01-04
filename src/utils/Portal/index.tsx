@@ -11,7 +11,7 @@ export const Portal = ({
   customBackdrop = undefined,
 }: PortalProps): React.ReactPortal => {
   const BACKDROP_POSITION =
-    container != null &&
+    container ??
     "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
 
   const BACKDROP_LAYOUT = "w-full h-full flex  items-center justify-center";

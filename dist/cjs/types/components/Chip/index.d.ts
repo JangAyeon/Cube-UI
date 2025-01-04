@@ -1,0 +1,1 @@
+export declare const Chip: import("react").ForwardRefExoticComponent<Omit<import("react").DetailedHTMLProps<import("react").HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref"> & import("./Chip.types").ChipStyleProps & import("react").RefAttributes<HTMLDivElement>>;

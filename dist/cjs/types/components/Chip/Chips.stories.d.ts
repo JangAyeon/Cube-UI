@@ -1,0 +1,10 @@
+import { type Meta, type StoryObj } from "@storybook/react";
+import { Chip } from ".";
+declare const meta: Meta<typeof Chip>;
+export default meta;
+type Story = StoryObj<typeof Chip>;
+export declare const Default: Story;
+export declare const Rounded: Story;
+export declare const SmallGray: Story;
+export declare const RedWithClassName: Story;
+export declare const WhiteRound: Story;

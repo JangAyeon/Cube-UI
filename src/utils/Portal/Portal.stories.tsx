@@ -56,7 +56,7 @@ export const NoContainer = (): JSX.Element => {
       >
         Portal {isOpen ? "Opened" : "Closed"}
       </Button>
-      <Portal isOpen={isOpen} onOutsideClick={() => setIsOpen(false)}>
+      <Portal isOpen={isOpen} onOutsideClick={() => { setIsOpen(false); }}>
         Portal
       </Portal>
     </>
@@ -86,7 +86,7 @@ export const NestedClickEvent = (): JSX.Element => {
         </Button>
         <Portal
           isOpen={isOpen}
-          onOutsideClick={() => setIsOpen(false)}
+          onOutsideClick={() => { setIsOpen(false); }}
           container={containerRef.current}
           customBackdrop="p-10 bg-red_100"
         >

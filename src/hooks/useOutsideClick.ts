@@ -8,7 +8,7 @@ const useOutsideClick = <T extends HTMLElement = HTMLElement>(
       // console.log(event.target?.id, event.target);
       const eTarget = event.target as HTMLDivElement;
       const refTarget = ref?.current;
-      if (eTarget && refTarget && eTarget.id === refTarget.id) {
+      if (refTarget != null && eTarget.id === refTarget.id) {
         console.log("clkose", refTarget.id, eTarget);
         handler(event);
       }

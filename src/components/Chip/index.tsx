@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import { type ChipProps } from "./Chip.types";
-import clsx from "clsx";
+
+import { cn } from "../../utils/Style/cn";
 
 const COLOR_THEMES = {
   primary: "bg-primary border border-primary text-white",
@@ -45,7 +46,7 @@ export const Chip = forwardRef<HTMLDivElement, ChipProps>(
     return (
       <div
         ref={ref}
-        className={clsx(
+        className={cn(
           COLOR_THEMES[colorTheme],
           CHIP_SIZES[size],
           CHIP_SHAPES[shape],

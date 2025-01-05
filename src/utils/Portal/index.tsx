@@ -1,8 +1,6 @@
-/* eslint-disable multiline-ternary */
-import clsx from "clsx";
-
 import ReactDOM from "react-dom";
 import { type PortalProps } from "./Portal.types";
+import { cn } from "../Style/cn";
 
 export const Portal = ({
   children,
@@ -16,12 +14,12 @@ export const Portal = ({
 
   const BACKDROP_LAYOUT = "w-full h-full flex  items-center justify-center";
   const BACKDROP_COLOR = customBackdrop ?? "bg-gray bg-opacity-70";
-  console.log(clsx(BACKDROP_POSITION, BACKDROP_COLOR, BACKDROP_LAYOUT));
+  console.log(cn(BACKDROP_POSITION, BACKDROP_COLOR, BACKDROP_LAYOUT));
   return ReactDOM.createPortal(
     <>
       {
         <div
-          className={clsx(BACKDROP_POSITION, BACKDROP_COLOR, BACKDROP_LAYOUT)}
+          className={cn(BACKDROP_POSITION, BACKDROP_COLOR, BACKDROP_LAYOUT)}
           onClick={onClickBackdrop}
         >
           {children}

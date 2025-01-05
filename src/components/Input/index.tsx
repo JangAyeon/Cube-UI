@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import { type InputProps } from "./Input.types";
-import clsx from "clsx";
+
+import { cn } from "../../utils/Style/cn";
 
 const BASE = "min-h-[4.8rem] px-[1.2rem] py-[0.8rem] box-border";
 const TEXT_STYLE = "text-Detail_100";
@@ -21,11 +22,10 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     },
     ref
   ) => {
-    console.log(clsx(width, height, isDisabled, className));
     return (
       <input
         ref={ref}
-        className={clsx(
+        className={cn(
           BASE,
           TEXT_STYLE,
           BORDER_STYLE,

@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import { Portal } from "../../../utils/Portal";
 import { type WrapperProps } from "./types";
+import { cn } from "../../../utils/Style/cn";
 
 export const Wrapper = ({
   isOpen,
@@ -15,7 +15,7 @@ export const Wrapper = ({
 
   return (
     <Portal onClickBackdrop={onClickBackdrop ?? onClose}>
-      <div className={clsx(layoutStyle, "flex flex-col relative")}>
+      <div className={cn(layoutStyle, "flex flex-col relative")}>
         {children}
       </div>
     </Portal>

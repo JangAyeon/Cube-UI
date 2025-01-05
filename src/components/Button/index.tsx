@@ -1,6 +1,6 @@
-import clsx from "clsx";
 import { forwardRef } from "react";
 import { type ButtonProps } from "./Button.types";
+import { cn } from "../../utils/Style/cn";
 
 const COLOR_THEMES = {
   primary: {
@@ -68,7 +68,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={clsx(
+        className={cn(
           COLOR_THEMES[colorTheme][variants ?? "solid"],
           BUTTON_SIZES[size],
           BUTTON_SHAPES[shape],

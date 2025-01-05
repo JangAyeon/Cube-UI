@@ -14,7 +14,7 @@ export const Wrapper = ({
   }
 
   return (
-    <Portal onClickBackdrop={onClickBackdrop ?? onClose}>
+    <Portal isOpen={isOpen} onClickBackdrop={onClickBackdrop ?? onClose}>
       <div className={cn(layoutStyle, "flex flex-col relative")}>
         {children}
       </div>

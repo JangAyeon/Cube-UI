@@ -16,7 +16,6 @@ export const InContainer = (): JSX.Element => {
 
   return (
     <>
-      <div ref={containerRef}>포탈이 보여지는 곳: </div>
       <Button
         colorTheme="primary"
         variants="solid"
@@ -26,7 +25,19 @@ export const InContainer = (): JSX.Element => {
       >
         Portal {isOpen ? "Opened" : "Closed"}
       </Button>
-      {isOpen && <Portal container={containerRef.current}>Portal</Portal>}
+      <div ref={containerRef}>
+        {" "}
+        <Portal
+          isOpen={isOpen}
+          onOutsideClick={() => {
+            setIsOpen(false);
+          }}
+          customBackdrop="p-10 bg-red_100"
+          container={containerRef.current}
+        >
+          portal
+        </Portal>
+      </div>
     </>
   );
 };
@@ -45,38 +56,49 @@ export const NoContainer = (): JSX.Element => {
       >
         Portal {isOpen ? "Opened" : "Closed"}
       </Button>
-      {isOpen && <Portal>Portal</Portal>}
+      <Portal isOpen={isOpen} onOutsideClick={() => { setIsOpen(false); }}>
+        Portal
+      </Portal>
     </>
   );
 };
 
-export const withBackdropControl = (): JSX.Element => {
+export const NestedClickEvent = (): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
+  const handleBtnClick = (e: React.MouseEvent): void => {
+    alert("portal btn click");
+  };
+
   return (
     <>
-      <div ref={containerRef}>container Ref</div>
-      <Button
-        colorTheme="primary"
-        variants="solid"
-        onClick={() => {
-          setIsOpen((prev) => !prev);
-        }}
-      >
-        Portal {isOpen ? "Opened" : "Closed"}
-      </Button>
-      {isOpen && (
-        <Portal
-          onClickBackdrop={() => {
-            setIsOpen(false);
+      <div ref={containerRef}>
+        container Ref{" "}
+        <Button
+          colorTheme="primary"
+          variants="solid"
+          onClick={() => {
+            setIsOpen((prev) => !prev);
           }}
+        >
+          Portal {isOpen ? "Opened" : "Closed"}
+        </Button>
+        <Portal
+          isOpen={isOpen}
+          onOutsideClick={() => { setIsOpen(false); }}
           container={containerRef.current}
           customBackdrop="p-10 bg-red_100"
         >
-          Portal
+          <Button
+            variants="solid"
+            colorTheme="primary"
+            onClick={handleBtnClick}
+          >
+            Portal btn
+          </Button>
         </Portal>
-      )}
+      </div>
     </>
   );
 };
